@@ -14,7 +14,10 @@
     player = new YT.Player('ytplayer', {
       height: '360',
       width: '640',
-      videoId: '6gmCC4OkFx8-VE'
+      videoId: '6gmCC4OkFx8',
+      events: {
+            'onReady': onPlayerReady,
+          }
     });
   }
 
