@@ -5,14 +5,14 @@ var tag = document.createElement('script');
 
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
-  // var videoId = document.getElementById("video-script").getAttribute("data-name");
+  var theVideoId = document.getElementById("video-script").getAttribute("data-name");
   var player;
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
       height: '100%',
       width: '100%',
       // videoId: videoIds[startIndex],
-      videoId: '7GhrD869S_E',
+      videoId: theVideoId,
       events: {
             'onReady': onPlayerReady,
           },
