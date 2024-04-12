@@ -3,8 +3,6 @@ var tag = document.createElement('script');
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  var videoIds = ['6gmCC4OkFx8', 'pmDl_y7dk_U', 'uioH5a6PNX8'];
-  var startIndex = Math.floor(Math.random() * videoIds.length);
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
   var videoId = document.getElementById("video-script").getAttribute("data-name");
@@ -14,7 +12,7 @@ var tag = document.createElement('script');
       height: '100%',
       width: '100%',
       // videoId: videoIds[startIndex],
-      videoId: videoId,
+      videoId: '7GhrD869S_E',
       events: {
             'onReady': onPlayerReady,
           },
