@@ -13,14 +13,10 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    // Example usage
     var videoId = getParameterByName('videoId');
-        if (videoId) {
-            console.log('Video ID:', videoId);
-            // You can do whatever you want with the videoId here
-        } else {
-            console.log('No video ID provided');
-        }
+    // TODO: Handle invalid videoId (show Dummy? Show instructions?)
+
+    
     // Load the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/player_api";
@@ -35,7 +31,7 @@
       player = new YT.Player('ytplayer', {
         height: '100%',
         width: '100%',
-        videoId: 'k4QDmJDRE6w',
+        videoId: videoId,
         events: {
               'onReady': onPlayerReady,
             },
