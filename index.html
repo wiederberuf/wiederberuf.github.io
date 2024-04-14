@@ -1,6 +1,16 @@
 <body style="margin:0; background: black">
     <div id="ytplayer"></div>
-  
+    <div id="info" style="
+        color: white;
+        font-family: monospace;
+        font-size: large;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 33%;
+        text-align: center;
+        display: none;
+    ">Club Software v1.43<br> initialized 🚀</div>
   <script>
 
     function getParameterByName(name, url) {
@@ -14,15 +24,20 @@
     }
 
     var videoId = getParameterByName('videoId');
-    // TODO: Handle invalid videoId (show Dummy? Show instructions?)
 
-    
+    if (!videoId || videoId.length == 0 || videoId === 'stop') {
+        var infoContainer = document.getElementById('info');
+        infoContainer.style.display = 'block';
+    } else {
     // Load the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/player_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    var startIndex = Math.floor(Math.random() * videoIds.length);
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+
+
 
     // Replace the 'ytplayer' element with an <iframe> and
     // YouTube player after the API code downloads.
